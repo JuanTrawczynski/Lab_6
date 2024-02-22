@@ -2,7 +2,13 @@
 
 int search(int numbers[], int low, int high, int value) 
 {
-	return -1;
+	if(low>high) return -1; //base case
+
+	int mid = low+(high-low)/2; //getting the middle index
+
+	if (numbers[mid] == value) return mid; //middle index found
+	else if (numbers[mid]== value) return search(numbers, mid+1, high, value); //search right
+	else return search (numbers, low, mid-1, value); //search right
 }
 
 void printArray(int numbers[], int sz)
